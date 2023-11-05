@@ -15,14 +15,6 @@
 
 .layout {
   display: flex;
-  height: 100vh;
-  position: relative;
-  gap: 2rem;
-}
-
-.layout {
-  display: flex;
-  height: 100vh;
   position: relative;
   gap: 2rem;
 }
@@ -30,11 +22,6 @@
 .layout__main-content {
   flex-grow: 1;
 }
-
-.sidebar__wrapper {
-  position: relative;
-}
-
 .sidebar {
   width: 17rem;
   height: 100%;
@@ -99,4 +86,8 @@
   cursor: pointer;
   transform: translateX(50%);
   font-size: 1.5rem;
+}
+
+td {
+  @apply text-xs font-[400] leading-none max-sm:text-xs mb-1;
 }

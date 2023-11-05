@@ -20,7 +20,7 @@ const TypographyColor = [
   "default",
   "muted",
   "danger",
-  "ready",
+  "black",
   "gradient",
 ] as const;
 
@@ -95,7 +95,7 @@ const Typography: TypographyComponent = React.forwardRef(
               "text-typography-300 dark:text-typography-600 leading-[16px]",
             ],
             color === "danger" && ["text-d-200"],
-            color === "ready" && ["text-ready-500"],
+            color === "black" && ["text-typography-800"],
           ],
 
           "transition-colors duration-200",

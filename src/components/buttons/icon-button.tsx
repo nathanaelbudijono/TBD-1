@@ -46,7 +46,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
           [
             size === "lg" && ["px-3 py-2.5"],
             size === "base" && ["px-2.5 py-2"],
-            size === "sm" && ["px-2 py-1.5"],
+            size === "sm" && ["px-1.5 py-1.5"],
           ],
           //#endregion  //*======== Size ===========
           //#region  //*=========== Variants ===========
@@ -95,7 +95,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
             <ImSpinner2 className="animate-spin" />
           </div>
         )}
-        {Icon && <Icon size="1rem" className={cn(iconClassName)} />}
+        {Icon && <Icon size="0.8rem" className={cn(iconClassName)} />}
       </button>
     );
   }

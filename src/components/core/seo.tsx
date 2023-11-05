@@ -3,11 +3,10 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 
 const defaultMeta = {
-  title: "Nathanael",
-  siteName: "NextJs + TailWindCSS Starter Kit",
-  description:
-    "A starterkit for NextJs + TailWindCSS with multiple components and modules",
-  url: "https://nathanaelbudijono.vercel.app/",
+  title: "FENS",
+  siteName: "Teknologi Basis Data",
+  description: "Tugas week 9",
+  url: "https://localhost:3000",
   type: "website",
   robots: "follow, index",
   image: "/logo.png",
