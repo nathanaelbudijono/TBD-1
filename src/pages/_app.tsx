@@ -8,7 +8,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <SidebarProvider>
       <ThemeProvider attribute="class" defaultTheme="light">
-        <main className="bg-gradient-to-b from-primary-400 to-primary-500 dark:from-quaternary-300 dark:to-quaternary-100">
+        <main className="bg-primary-200">
           <NextNProgress
             color="#29D"
             startPosition={0.3}

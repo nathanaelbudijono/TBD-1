@@ -44,9 +44,14 @@ export default function Input({
   return (
     <div className={containerClassName}>
       {label && (
-        <div className="bg-d-600 flex w-fit px-3 py-1 border border-d-600 rounded-t-lg gap-2 items-center dark:bg-n-300 dark:border-n-200">
-          {LeftIconLabel && <LeftIconLabel className="text-color-100" />}
-          <Typography as="label" variant="p" className="block" htmlFor={id}>
+        <div className="bg-primary-500 flex w-fit px-3 py-1 border border-d-600 rounded-t-lg gap-2 items-center dark:bg-n-300 dark:border-n-200">
+          {LeftIconLabel && <LeftIconLabel className="text-primary-200" />}
+          <Typography
+            as="label"
+            variant="p"
+            className="block text-typography-100"
+            htmlFor={id}
+          >
             {label}
           </Typography>
         </div>
@@ -57,7 +62,7 @@ export default function Input({
             {typeof LeftIcon === "string" ? (
               <Typography variant="p">{LeftIcon}</Typography>
             ) : (
-              <LeftIcon className="text-d-600 dark:text-color-100" />
+              <LeftIcon className="text-primary-500 dark:text-color-100" />
             )}
           </div>
         )}
@@ -84,7 +89,7 @@ export default function Input({
           aria-describedby={id}
         />
         {rightNode && (
-          <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-d-600 dark:text-color-100">
+          <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-primary-500 dark:text-color-100">
             {rightNode}
           </div>
         )}
@@ -95,7 +100,7 @@ export default function Input({
         </Typography>
       )}
       {!hideError && error && (
-        <Typography variant="small" color="danger" className="mt-2">
+        <Typography variant="small" className="mt-2">
           {error?.message?.toString()}
         </Typography>
       )}

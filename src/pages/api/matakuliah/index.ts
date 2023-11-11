@@ -20,15 +20,20 @@ export default async function handleForm(
               if (err) {
                 res.status(400).json({ message: "Wrong token" });
               } else {
-                const matkulexist = await prisma.mATA_KULIAH.findFirst({
+                const IDexist = await prisma.mATA_KULIAH.findFirst({
                   where: {
                     ID_MK: id,
                   },
                 });
-                if (matkulexist) {
+                const matkulExist = await prisma.mATA_KULIAH.findFirst({
+                  where: {
+                    NAME_MK: mataKuliah,
+                  },
+                });
+                if (IDexist || matkulExist) {
                   res
-                    .status(400)
-                    .json({ message: "Matkul sudah permah dibuat" });
+                    .status(401)
+                    .json({ message: "Kode MK/Nama MK sudah pernah dibuat" });
                 } else {
                   const matkul = await prisma.mATA_KULIAH.create({
                     data: {
@@ -60,7 +65,9 @@ export default async function handleForm(
               if (err) {
                 console.log(err);
               } else {
-                const rows = await prisma.mATA_KULIAH.findMany();
+                const rows = await prisma.mATA_KULIAH.findMany({
+                  orderBy: { createdAt: "desc" },
+                });
                 res.status(200).json({ rows });
               }
             }

@@ -1,6 +1,6 @@
 // https://github.com/MdUsmanAnsari/collapsible-sidebar-in-nextjs/blob/main/src/context/SidebarContext.js
 
-import React, { createContext, useState, ReactNode } from "react";
+import React, { createContext, useState, ReactNode, useEffect } from "react";
 
 interface SidebarContextType {
   isCollapsed: boolean;
@@ -20,6 +20,21 @@ interface SidebarProviderProps {
 
 const SidebarProvider: React.FC<SidebarProviderProps> = ({ children }) => {
   const [isCollapsed, setCollapse] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setCollapse(true);
+      } else {
+        setCollapse(false);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const toggleSidebarcollapse = () => {
     setCollapse((prevState) => !prevState);

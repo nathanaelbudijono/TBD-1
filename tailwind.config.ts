@@ -54,19 +54,23 @@ module.exports = {
         "n-500": "#FFC1A0",
         "n-600": "#FD9C7F",
 
-        "primary-100": "#5E97C2",
-        "primary-200": "#6788BD",
-        "primary-300": "#7577B3",
-        "primary-400": "#8565A2",
-        "primary-500": "#91528B",
-        "primary-600": "#983E6E",
+        "primary-100": "#FCFAEC",
+        "primary-200": "#BBC6A6",
+        "primary-300": "#879273",
+        "primary-400": "#566044",
+        "primary-500": "#293319",
+        "primary-600": "#729E2F",
+        "primary-700": "#6D9971",
+        "primary-800": "#8F9973",
+        "primary-900": "#359BA8",
 
-        "secondary-100": "#5E97C2",
-        "secondary-200": "#A4A5B7",
-        "secondary-300": "#7B7B8D",
-        "secondary-400": "#535465",
-        "secondary-500": "#2F303F",
-        "secondary-600": "#1C1D2B",
+        "secondary-100": "#F9F871",
+        "secondary-200": "#C1C23C",
+        "secondary-300": "#D8D953",
+        "secondary-400": "#8A8F00",
+        "secondary-500": "#FFCA80",
+        "secondary-600": "#FFB896",
+        "secondary-700": "#C4AA36",
 
         "tertiary-500": "#DA0032",
         "tertiary-400": "#FF3463",
@@ -82,6 +86,26 @@ module.exports = {
       },
       screens: {
         xs: "400px",
+      },
+      keyframes: {
+        fadeInRight: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(-2rem)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0rem)",
+          },
+        },
+        fadeOutLeft: {
+          "0%": {
+            opacity: "1",
+          },
+          "100%": {
+            opacity: "0",
+          },
+        },
       },
     },
   },

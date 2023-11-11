@@ -20,7 +20,7 @@ export default function Pagination({
   }
   return (
     <nav className="mt-5 pr-1">
-      <ul className="pagination flex gap-[10px] justify-end text-black items-center max-sm:justify-start text-sm">
+      <ul className="pagination flex gap-[10px] justify-end text-typography-100 items-center max-sm:justify-start text-sm">
         {pageNumbers.map((number) => (
           <li key={number}>
             <a
@@ -28,7 +28,7 @@ export default function Pagination({
               onClick={() => paginate(number)}
               className={
                 currentPage === number
-                  ? "bg-d-500 px-2 py-1 rounded-md"
+                  ? "bg-primary-500 px-2 py-1 rounded-md"
                   : " px-2 py-1 rounded-md"
               }
             >

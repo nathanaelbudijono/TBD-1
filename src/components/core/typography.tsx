@@ -86,7 +86,7 @@ const Typography: TypographyComponent = React.forwardRef(
           ],
           [
             color === "default" && [
-              "text-typography-100 dark:text-typography-800",
+              "text-typography-800 dark:text-typography-800",
             ],
             color === "gradient" && [
               "bg-gradient-to-r from-primary-400 to-primary-100 bg-clip-text text-transparent dark:from-tertiary-400 dark:to-tertiary-300",

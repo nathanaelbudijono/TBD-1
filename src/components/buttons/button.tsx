@@ -45,7 +45,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           "focus:outline-none focus-visible:ring",
           "shadow-sm",
           "transition-colors duration-100",
-          "disabled:bg-d-200 disabled:border-0",
+          "disabled:bg-primary-200 disabled:border-0",
           //#region  //*=========== Size ===========
           [
             size === "lg" && ["px-3 py-2.5"],
@@ -59,7 +59,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               "bg-primary-500 text-color-100",
               "border border-d-600",
               "dark:bg-n-200 dark:hover:border-n-300",
-              "hover:bg-d-600 hover:border-d-500",
+              "hover:bg-primary-400 hover:border-d-500",
               "dark:hover:bg-n-200",
             ],
 

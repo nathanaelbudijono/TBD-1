@@ -33,7 +33,8 @@ export default function DashboardTableLogs() {
   const formFilter: TableAudit["rows"] = tableAudit?.rows?.filter(
     (item) =>
       item?.ID_MK.toLocaleLowerCase().includes(search.toLocaleLowerCase()) ||
-      item?.NAME_NEW.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+      item?.NAME_NEW.toLocaleLowerCase().includes(search.toLocaleLowerCase()) ||
+      item?.NAME_OLD.toString().toLocaleLowerCase()
   );
 
   const {
@@ -61,7 +62,7 @@ export default function DashboardTableLogs() {
         </div>
       </section>
 
-      <section className="bg-tertiary-100 p-3 rounded-md shadow-md   overflow-auto">
+      <section className="bg-primary-300 p-3 rounded-md shadow-md   overflow-auto">
         <table className="table-auto w-full  border-seperate border-spacing-y-3">
           <thead>
             <tr className="pb-1 border-b-2 border-primary-500">
@@ -115,11 +116,11 @@ export default function DashboardTableLogs() {
           <tbody>
             {currentItems?.map((item, index) => {
               return (
-                <tr key={item?.ID_MK} className="text-center">
+                <tr key={index} className="text-center">
                   <td>{indexOfFirstItem + index + 1}</td>
                   <td>{index + 1}</td>
                   <td>{item?.ID_MK}</td>
-                  <td>2</td>
+                  <td>{item?.SKS_NEw ? item?.SKS_NEw : "N/A"}</td>
                   <td>{item?.SKS_OLD ? item?.SKS_OLD : "N/A"}</td>
                   <td>{item?.NAME_NEW}</td>
                   <td>{item?.NAME_OLD ? item?.NAME_OLD : "N/A"}</td>

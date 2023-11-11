@@ -12,7 +12,7 @@ export default function Dashboardmain() {
 
   React.useEffect(() => {
     getMK();
-  }, [mk]);
+  }, []);
 
   const jumlahMK = mk?.rows.length;
   const date = new Date();
@@ -20,7 +20,7 @@ export default function Dashboardmain() {
     return accumulator + currentValue.SKS;
   }, 0);
   return (
-    <main className="bg-tertiary-100 px-3 py-4 rounded-md shadow-sm">
+    <main className="bg-primary-300 px-3 py-4 rounded-md shadow-sm">
       <section className="grid grid-cols-3 max-sm:grid-cols-1 gap-5">
         <div className="flex items-center gap-2">
           <SlCalender className="text-2xl" />

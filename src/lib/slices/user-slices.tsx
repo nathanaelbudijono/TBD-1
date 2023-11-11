@@ -9,8 +9,9 @@ export interface User {
 
 export interface UserState {
   users: User | null;
-  loginUser: (username: string, passwor: string) => Promise<void>;
+  loginUser: (username: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
+  registerUser: (username: string, password: string) => Promise<void>;
   errorMessage: string;
 }
 
@@ -24,8 +25,20 @@ export const userSlice: StateCreator<UserState> = (set, get) => ({
       set({ errorMessage: err.response.data.message });
     }
   },
+  registerUser: async (username: string, password: string) => {
+    try {
+      set({ errorMessage: "" });
+      await axios.post(`${nextAPIUrl}/user/register`, { username, password });
+    } catch (err: any) {
+      set({ errorMessage: err.response.data.message });
+    }
+  },
   logout: async () => {
-    await axios.post(`${nextAPIUrl}/user/logout`);
+    try {
+      await axios.post(`${nextAPIUrl}/user/logout`);
+    } catch (err: any) {
+      set({ errorMessage: err.response.data.message });
+    }
   },
   errorMessage: "",
 });

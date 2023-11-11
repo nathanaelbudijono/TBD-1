@@ -29,7 +29,7 @@ interface Inputs {
 
 export default function Update({ user }: { user: User }) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const { getMKByID, singleMK, updateMK } = useAppStore();
+  const { getMKByID, singleMK, updateMK, errorMessageUpdate } = useAppStore();
   const router = useRouter();
   const slug = router.query.slug as string;
 
@@ -57,13 +57,17 @@ export default function Update({ user }: { user: User }) {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     try {
       await updateMK(data.id, data.mataKuliah, slug);
-      toast("Mata Kuliah berhasil diupdate");
+      if (errorMessageUpdate === "Kode MK/Nama MK sudah pernah dibuat") {
+        return toast.error(errorMessageUpdate);
+      } else {
+        toast("Mata Kuliah berhasil diupdate");
+        router.push("/dashboard/table");
+      }
     } catch (err) {
       console.log(err);
       toast.error("Mata Kuliah gagal diedit");
     } finally {
       setIsLoading(false);
-      router.push("/dashboard/table");
     }
 
     return;

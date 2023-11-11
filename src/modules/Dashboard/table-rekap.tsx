@@ -54,14 +54,14 @@ export default function DashboardTable() {
           <AiOutlineSearch className="text-xl -translate-x-6 text-gray-500 opacity-50" />
         </div>
         <button
-          className="px-5 py-2 bg-primary-500 rounded-md shadow-sm -translate-y-2"
+          className="px-3 py-2 bg-primary-500 rounded-md shadow-sm -translate-y-2 hover:bg-primary-300 duration-300"
           onClick={() => router.push("/dashboard")}
         >
           <AiOutlinePlus className="text-white" />
         </button>
       </section>
 
-      <section className="bg-tertiary-100 p-3 rounded-md shadow-md   overflow-auto">
+      <section className="bg-primary-300 p-3 rounded-md shadow-md   overflow-auto">
         <table className="table-auto w-full  border-seperate border-spacing-y-3">
           <thead>
             <tr className="pb-1 border-b-2 border-primary-500">

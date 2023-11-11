@@ -18,7 +18,7 @@ import { FaHistory } from "react-icons/fa";
 import { BsTable } from "react-icons/bs";
 
 const Sidebar = () => {
-  const { logout } = useAppStore();
+  const { logout, errorMessage } = useAppStore();
   const router = useRouter();
   const { isCollapsed, toggleSidebarcollapse } =
     React.useContext(useSidebarContext);
@@ -33,7 +33,7 @@ const Sidebar = () => {
         {isCollapsed ? <MdKeyboardArrowRight /> : <MdKeyboardArrowLeft />}
       </Button>
       <aside
-        className="sidebar bg-primary-500 dark:bg-quaternary-400 shadow-md"
+        className="sidebar bg-primary-100 shadow-md"
         data-collapse={isCollapsed}
       >
         <div className="sidebar__top pt-1">
@@ -46,7 +46,7 @@ const Sidebar = () => {
             return (
               <li className="sidebar__item" key={name}>
                 <Link
-                  className={`inline-block text-[1rem] text-typography-100 dark:text-typography-800 py-[0.7rem] px-[0.9rem] mb-[1rem] rounded-md ${
+                  className={`inline-block text-[1rem] text-typography-800 dark:text-typography-800 py-[0.7rem] px-[0.9rem] mb-[1rem] rounded-md ${
                     router.pathname === href
                       ? "bg-primary-300 dark:bg-quaternary-300"
                       : ""
@@ -64,9 +64,11 @@ const Sidebar = () => {
           <div className="absolute bottom-5 pl-2">
             <Button variant="ghost" onClick={logoutUser}>
               <span className="sidebar__icon">
-                <AiOutlineLogout />
+                <AiOutlineLogout className="text-typography-800" />
               </span>
-              <span className="sidebar__name">Logout</span>
+              <span className="sidebar__name text-typography-800 -translate-y-1">
+                Logout
+              </span>
             </Button>
           </div>
         </ul>

@@ -15,7 +15,11 @@ export default function LogsHandler(req: NextApiRequest, res: NextApiResponse) {
             if (err) {
               throw err;
             } else {
-              const rows = await prisma.aUDIT_MK.findMany();
+              const rows = await prisma.aUDIT_MK.findMany({
+                orderBy: {
+                  DATE: "desc",
+                },
+              });
               res.status(200).json({ rows });
             }
           }

@@ -60,7 +60,7 @@ export default function PasswordInput({
             {typeof LeftIcon === "string" ? (
               <Typography variant="p">{LeftIcon}</Typography>
             ) : (
-              <LeftIcon className="text-d-600 dark:text-color-100" />
+              <LeftIcon className="text-primary-500 dark:text-color-100" />
             )}
           </div>
         )}
@@ -87,7 +87,7 @@ export default function PasswordInput({
           aria-describedby={id}
         />
 
-        <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-d-600">
+        <div className="absolute inset-y-0 right-0 flex items-center pr-3 text-primary-500">
           <button type="button" onClick={togglePassword}>
             {showPassword ? (
               <AiFillEye className="cursor-pointer dark:text-color-100" />

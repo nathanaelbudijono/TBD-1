@@ -17,6 +17,7 @@ import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
 import { AiOutlineUser } from "react-icons/ai";
 import { HiOutlineXCircle } from "react-icons/hi";
 import { RiLockPasswordFill } from "react-icons/ri";
+import UnstyledLink from "@/components/links/unstyled-link";
 type Inputs = {
   username: string;
   password: string;
@@ -41,7 +42,7 @@ export default function Home() {
   };
   return (
     <main className="relative">
-      <Seo />
+      <Seo title="Login" />
       <Layout className="justify-center items-center flex-col h-screen relative">
         <section className="px-10 py-7 bg-primary-300 rounded-md shadow-md backdrop-blur-[5px] bg-opacity-40">
           <form
@@ -49,7 +50,7 @@ export default function Home() {
             className="flex flex-col gap-5 "
           >
             <FormProvider {...methods}>
-              <Typography variant="h3">login</Typography>
+              <Typography variant="h3">Login</Typography>
               {errorMessage && (
                 <Typography variant="small">{errorMessage}</Typography>
               )}
@@ -71,10 +72,13 @@ export default function Home() {
                 leftIcon={RiLockPasswordFill}
               />
               <Button type="submit" variant="primary">
-                LOGIN
+                Login
               </Button>
             </FormProvider>
           </form>
+          <UnstyledLink href="/register" className="mt-3">
+            Create an account
+          </UnstyledLink>
         </section>
       </Layout>
     </main>

@@ -20,7 +20,9 @@ export default function Breadcrumbs() {
             <div key={segmentPath}>
               <Link
                 href={segmentPath}
-                className={index === 0 ? "text-color-100" : "text-n-500"}
+                className={
+                  index === 0 ? "text-typography-800" : "text-secondary-400"
+                }
               >
                 {capitalizedSegment} {"/"}
               </Link>
