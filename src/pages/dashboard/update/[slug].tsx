@@ -88,7 +88,7 @@ export default function Update({ user }: { user: User }) {
               <Typography variant="h4">Formulir Update MataKuliah</Typography>
               <form
                 onSubmit={handleSubmit(onSubmit)}
-                className="flex flex-col gap-3 bg-[#7577b3] px-5 py-4 rounded-md shadow-sm w-full"
+                className="flex flex-col gap-3 bg-primary-300 px-5 py-4 rounded-md shadow-sm w-full"
               >
                 <FormProvider {...methods}>
                   <Input

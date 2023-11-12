@@ -15,6 +15,7 @@ export interface MKState {
   getMK: () => Promise<void>;
   postMK: (id: string, mataKuliah: string) => Promise<void>;
   updateMK: (id: string, mataKuliah: string, slug: string) => Promise<void>;
+  deleteMK: (slug: string) => Promise<void>;
   errorMessageMK: string;
   errorMessageUpdate: string;
 }
@@ -46,7 +47,7 @@ export const mkSlice: StateCreator<MKState> = (set, get) => ({
   },
   updateMK: async (id: string, mataKuliah: string, slug: string) => {
     try {
-      await axios.put(`${nextAPIUrl}/matakuliah/${slug}`, {
+      await axios.put(`${nextAPIUrl}/unique/${slug}`, {
         id,
         mataKuliah,
         slug,
@@ -54,6 +55,13 @@ export const mkSlice: StateCreator<MKState> = (set, get) => ({
     } catch (err: any) {
       console.log(err);
       set({ errorMessageUpdate: err.response.data.message });
+    }
+  },
+  deleteMK: async (slug: string) => {
+    try {
+      await axios.delete(`${nextAPIUrl}/unique/${slug}`);
+    } catch (err) {
+      console.log(err);
     }
   },
 });

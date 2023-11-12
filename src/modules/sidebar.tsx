@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 
 import { useSidebarContext } from "@/hooks/useSidebar";
 
-import { AiOutlineHome } from "react-icons/ai";
+import { AiOutlineHome, AiFillBook } from "react-icons/ai";
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
 import { AiOutlineLogout } from "react-icons/ai";
 
@@ -15,7 +15,6 @@ import Typography from "@/components/core/typography";
 import { useAppStore } from "@/lib/store";
 
 import { FaHistory } from "react-icons/fa";
-import { BsTable } from "react-icons/bs";
 
 const Sidebar = () => {
   const { logout, errorMessage } = useAppStore();
@@ -86,9 +85,9 @@ const sidebarItems = [
     icon: AiOutlineHome,
   },
   {
-    name: "History",
-    href: "/dashboard/table",
-    icon: BsTable,
+    name: "Mata kuliah",
+    href: "/dashboard/matakuliah",
+    icon: AiFillBook,
   },
   {
     name: "logs",

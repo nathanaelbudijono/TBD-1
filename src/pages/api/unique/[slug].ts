@@ -67,5 +67,31 @@ export default async function MkHandler(
         console.log(err);
         res.status(500).json({ message: "There is no token" });
       }
+      break;
+    case "DELETE":
+      try {
+        const id = req.query.slug as string;
+        console.log("delete", slug);
+        jwt.verify(
+          token.substring(1, token.length - 1),
+          process.env.TOKEN_SECRET as string,
+          {},
+          async (err, token) => {
+            if (err) {
+              throw err;
+            } else {
+              const rows = await prisma.mATA_KULIAH.delete({
+                where: {
+                  ID_MK: id,
+                },
+              });
+              return res.status(200).json({ rows });
+            }
+          }
+        );
+      } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: "There is no token" });
+      }
   }
 }

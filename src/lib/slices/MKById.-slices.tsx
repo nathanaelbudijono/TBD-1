@@ -26,7 +26,7 @@ export const singleMKSlice: StateCreator<SingleMKState> = (set, get) => ({
 
   getMKByID: async (slug: string) => {
     try {
-      const res = await axios.get(`${nextAPIUrl}/matakuliah/${slug}`);
+      const res = await axios.get(`${nextAPIUrl}/unique/${slug}`);
       set({ singleMK: res.data });
     } catch (err: any) {
       console.log(err);

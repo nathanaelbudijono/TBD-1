@@ -73,7 +73,7 @@ export default function Dashboard({ user }: { user: User }) {
             <section className="mt-5">
               <div>
                 <Typography variant="h4">
-                  Formulir Membuat MataKuliah
+                  Formulir Membuat Mata Kuliah
                 </Typography>
 
                 <form
@@ -89,8 +89,8 @@ export default function Dashboard({ user }: { user: User }) {
                     />
                     <Input
                       id="mataKuliah"
-                      placeholder="Matakuliah"
-                      label="Matakuliah"
+                      placeholder="Mata Kuliah"
+                      label="Mata Kuliah"
                       validation={{ required: "Matakuliah must be filled" }}
                     />
 

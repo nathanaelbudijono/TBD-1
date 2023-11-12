@@ -4,7 +4,7 @@ import { useAppStore } from "@/lib/store";
 import { MK } from "@/lib/slices/tabelMK-slice";
 
 import { AiOutlineSearch } from "react-icons/ai";
-import EditButton from "./edit-button";
+import EditButton from "./action-button";
 import handlePage from "@/constant/pagination";
 import Pagination from "./pagination";
 
@@ -101,7 +101,11 @@ export default function DashboardTable() {
                   <td>{item?.NAME_MK}</td>
                   <td>{item?.SKS}</td>
                   <td>
-                    <EditButton id={item?.ID_MK} />
+                    <EditButton
+                      id={item?.ID_MK}
+                      name={item?.NAME_MK}
+                      sks={item?.SKS}
+                    />
                   </td>
                 </tr>
               );
